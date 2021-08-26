@@ -24,6 +24,7 @@ public class PessoaResource {
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public Set<Pessoa> list() {
+    System.out.println("Recebendo request");
     return pessoas;
   }
 
@@ -31,6 +32,7 @@ public class PessoaResource {
   @Produces(MediaType.APPLICATION_JSON)
   @Path("/{cpf}")
   public Response retrive(@PathParam("cpf") String cpf) {
+    System.out.println("Recebendo request");
     List<Pessoa> pessoas = this.pessoas.stream().filter((p)->cpf.equals(p.getCpf()))  .collect(Collectors
         .toCollection(ArrayList::new));
     

@@ -26,7 +26,7 @@ public class PessoaResource {
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public Set<Pessoa> list() {
-    System.out.println("Recebendo request");
+
     return pessoas;
   }
   
